@@ -13,12 +13,16 @@ import java.util.Arrays;
 @Aspect
 public class LogParameterAspect {
 
-    @Pointcut("@annotation(LogParameter)")
-    public void pointCut() {
+    @Pointcut("@within(LogParameter)")
+    public void logClass() {
     }
 
-    @Before("pointCut()")
-    public void logParameter(JoinPoint joinPoint) {
+    @Before("logClass()")
+    public void logClassParameter(JoinPoint joinPoint) {
+        doLog(joinPoint);
+    }
+
+    private void doLog(JoinPoint joinPoint) {
         Class<?> targetClass = joinPoint.getTarget().getClass();
         String methodName = joinPoint.getSignature().getName();
         //有缓存，不会每次new一个新的logger对象
@@ -27,5 +31,14 @@ public class LogParameterAspect {
         Arrays.stream(args).forEach(arg -> {
             logger.debug("{}->{}", methodName, arg.toString());
         });
+    }
+
+    @Pointcut("@annotation(LogParameter)")
+    public void logMethod() {
+    }
+
+    @Before("logMethod()")
+    public void logMethodParameter(JoinPoint joinPoint) {
+        doLog(joinPoint);
     }
 }
