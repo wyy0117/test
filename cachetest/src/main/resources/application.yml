@@ -1,0 +1,9 @@
+
+spring:
+  redis:
+    host: localhost
+server:
+    port: 8000
+logging:
+  level:
+    com: debug
