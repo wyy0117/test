@@ -13,15 +13,15 @@ public class TestController {
     private TestService testService;
 
     /**
-     * curl -v localhost:8000/hello
+     * curl -v localhost:8001/hello
      *
      * @return
      */
     @GetMapping("hello")
-    public String hello() {
+    public User hello() {
         Logger logger = LoggerFactory.getLogger(TestController.class);
         logger.debug("111");
 
-        return testService.hello("123", 789);
+        return testService.hello("112233", 789);
     }
 }
