@@ -48,7 +48,7 @@ public class LogParameterAspect {
          * 一个方法，log在一行中
          */
         Arrays.stream(args).forEach(arg -> {
-            stringBuilder.append(arg.toString());
+            stringBuilder.append(arg);
             stringBuilder.append(",");
         });
         String parameterStr = stringBuilder.substring(0, stringBuilder.length() - 1);
