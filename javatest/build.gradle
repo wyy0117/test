@@ -12,6 +12,14 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+// https://mvnrepository.com/artifact/org.springframework/spring-web
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.9'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.4'
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.4'
+
 }
 
 test {
