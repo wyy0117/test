@@ -1,22 +1,13 @@
 package com.wyy.test;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.*;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-import sun.net.www.http.HttpClient;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLContext;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -94,7 +85,7 @@ public class RestTemplateTest {
             @Override
             public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
                 //login
-              request.getHeaders().add("token","tttt");
+                request.getHeaders().add("token", "tttt");
                 ClientHttpResponse clientHttpResponse = execution.execute(request, body);
                 return clientHttpResponse;
             }
