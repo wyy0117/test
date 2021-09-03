@@ -112,6 +112,14 @@ public class JavaTest {
         System.out.println("s = " + s);
     }
 
+
+    @Test
+    public void List() {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        System.out.println("list = " + list);
+    }
     @Test
     public void lambda() {
         List<String> list = new ArrayList<>();

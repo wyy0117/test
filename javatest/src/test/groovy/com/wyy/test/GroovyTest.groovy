@@ -25,7 +25,7 @@ class GroovyTest {
         new SecureRandom().nextInt(max) + 1
     }
 
-    private <T> List<T> random(List<T> list, int count = list.size()) {
+    private <T> List<T> random(List<T> list, int count = new SecureRandom().nextInt(list.size()) + 1) {
         List<T> copyList = new ArrayList<>(list)
         SecureRandom random = new SecureRandom()
         T temp
