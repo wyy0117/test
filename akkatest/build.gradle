@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'com.wyy'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor
+    implementation 'com.typesafe.akka:akka-actor_2.12:2.5.22'
+
+}
+
+test {
+    useJUnitPlatform()
+}

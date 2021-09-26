@@ -112,6 +112,14 @@ public class JavaTest {
         System.out.println("s = " + s);
     }
 
+    @Test
+    public void testStr() {
+        String str = "http://172.25.48.130:26001/page/api/rest/internal/v3/vote/token/verify?userId={userId}&conferenceNo={conferenceNo}&meetingId={meetingId}&token={token}";
+        String token = "wpIWXgAFnFVdMAtNzzS/d+oHpZvo8RPEEBoaep5u6Jio3e6g9l79DG1QfIr/DVfoM4cqMeVIyjKZeLbyTMA8CA==";
+        str = str.replace("{token}", token);
+        System.out.println("str = " + str);
+
+    }
 
     @Test
     public void List() {
@@ -120,6 +128,7 @@ public class JavaTest {
         list.add("2");
         System.out.println("list = " + list);
     }
+
     @Test
     public void lambda() {
         List<String> list = new ArrayList<>();
@@ -158,14 +167,10 @@ public class JavaTest {
 
 
         List<DTO> collect = list.stream().map(s -> {
-            return new DTO(s);
-        }).filter(dto -> {
-            return dto.getA().equals("1");
-        })
-
-
-
-
+                    return new DTO(s);
+                }).filter(dto -> {
+                    return dto.getA().equals("1");
+                })
 
 
                 .collect(Collectors.toList());
