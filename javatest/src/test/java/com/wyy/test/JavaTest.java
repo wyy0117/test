@@ -20,8 +20,8 @@ public class JavaTest {
 
     @Test
     public void test2() {
-        int sum = Stream.of(1, 2, null).mapToInt(a -> a).sum();
-        System.out.println("sum = " + sum);
+
+Integer.parseInt("null");
     }
 
     @Test
@@ -108,6 +108,11 @@ public class JavaTest {
         System.out.println(s);
     }
 
+    @Test
+    public void test4() {
+        new HashMap<>();
+    }
+
     private void print(String s) {
         System.out.println("s = " + s);
     }
@@ -127,6 +132,34 @@ public class JavaTest {
         list.add("1");
         list.add("2");
         System.out.println("list = " + list);
+
+        Map<String, String> map = new HashMap<>();
+        map.computeIfAbsent("aa", __ -> "bb");
+    }
+
+    @Test
+    public void testMap() {
+        Map<String, String> map1 = new HashMap<>();
+        Map<String, String> map2 = new HashMap<>();
+
+        map1.put("1", "1");
+        map1.put("2", "2");
+
+        map2.put("a", "a");
+        map2.put("B", "B");
+        List<Iterator> list = new ArrayList();
+
+        list.add(map1.entrySet().iterator());
+        list.add(map2.entrySet().iterator());
+
+        for (Iterator iterator : list) {
+            while (iterator.hasNext()) {
+                iterator.next();
+                iterator.remove();
+            }
+        }
+        System.out.println("map1 = " + map1);
+
     }
 
     @Test
