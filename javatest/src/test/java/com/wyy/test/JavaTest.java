@@ -20,8 +20,7 @@ public class JavaTest {
 
     @Test
     public void test2() {
-
-Integer.parseInt("null");
+      new DebugService().test1();
     }
 
     @Test

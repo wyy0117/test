@@ -1,5 +1,6 @@
 package com.wyy.testtranaction.controller;
 
+import com.wyy.testtranaction.DebugProperty;
 import com.wyy.testtranaction.service.UserService1;
 import com.wyy.testtranaction.service.UserService2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class ApiController {
 
     @Autowired
     private UserService2 userService2;
+
+    @Autowired
+    private DebugProperty debugProperty;
 
     @GetMapping("test")
     public void test() {

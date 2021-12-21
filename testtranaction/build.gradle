@@ -9,7 +9,23 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
-    mavenCentral()
+    maven {
+        allowInsecureProtocol = true
+        url = 'http://10.170.209.180:8081/nexus/content/groups/public/'
+    }
+    maven {
+        allowInsecureProtocol = true
+        url = 'http://10.170.209.180:8081/nexus/content/repositories/jcenter/'
+    }
+    maven {
+        allowInsecureProtocol = true
+        url = 'http://10.170.209.180:8081/nexus/content/repositories/central/'
+    }
+    maven {
+        allowInsecureProtocol = true
+        url = 'http://10.170.209.180:8081/nexus/content/repositories/gradle-plugin/'
+    }
+    mavenLocal()
 }
 
 dependencies {
